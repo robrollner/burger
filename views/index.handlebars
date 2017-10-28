@@ -1,42 +1,31 @@
-<div class="jumbotron">
-<h1>Eat-duh-burger!</h1>
-
-{{!-- <h2>Cats that are not sleepy!</h2> --}}
-
-<ul class="list-group-item">
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{> burgers devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-</div>
-<div class="jumbotron">
-{{!-- <h2>Cats that are sleepy!</h2> --}}
-
-<ul class="list-group-item">
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-</div>
-<h2>Eat a Burger</h2>
-{{!-- <form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Type:</label>
-    <input type="text" id="ca" name="name">
-  </div> --}}
-
-{{!-- <div class="jumbotron">
-  <div class="form-group">
-    <label for="slee">Devoured</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div> --}}
-{{!-- 
-  {{!-- <button type="submit">Add Cat</button> --}}
-</form> --}}
+<div class="text-center">
+  <img class="" src='../public/assets/img/burger.png'>
+  {{!-- hopefully creating left side of DOM --}}
+  <div class="row">
+    <div class="col-md-6" id="readyToEat">
+      <ul class="list-group-item">
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{!-- {{> burgers/burger-block devoured=true}} --}}
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    {{!-- right side eaten burgers--}}
+    <div class="col-md-6" id="eaten">
+      <ul class="list-group-item">
+        {{#each burgers}}
+          {{#if devoured}}
+            {{!-- {{> burgers/burger-block devoured=false}} --}}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  {{!-- button --}}
+  <div class="row">
+    <h2 class="text-center">Order a burger!</h2>
+      <input id="newBurger" class="form-control" type="text"><hr>
+        <button id="newBurgerBtn" class="btn btn-default btn-lg btn-block">Order</button>
+  </div>
 </div>
