@@ -19,19 +19,21 @@ router.get("/", (req, res) => {
 
 //route to create new rows
 
-router.post("/api/burgers", (req, res) => {
+router.post("/api/burger", (req, res) => {
     console.log(req.params);
 
     let burgerName = req.params.burger_name;
     let eat = req.params.devoured;
 
-    burger.create([
-        "burgerName", "eat"
-    ], [
-        req.body.burgerName, req.body.eat
-    ], (result) => {
-        res.json({ id: result, insertId });
-    });
+    burger.create(
+
+        [
+            "burgerName", "eat"
+        ], [
+            req.body.burgerName, req.body.eat
+        ], (result) => {
+            res.json({ id: result, insertId });
+        });
 });
 
 //update by ID

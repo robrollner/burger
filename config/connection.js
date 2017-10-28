@@ -1,7 +1,7 @@
 // Set up MySQL connection.
-const mysql = require("mysql");
+var mysql = require("mysql");
 
-const connection;
+var connection;
 if (process.env.JAWSDB_URL) {
     //Heroku deployment
     connection = mysql.createConnection(process.env.JAWSDB_URL);
@@ -15,6 +15,6 @@ if (process.env.JAWSDB_URL) {
         database: "hlkxxdv0jwz3kse7"
     });
 };
-console.log("connected as to HerokuDB");
+console.log("connected to HerokuDB");
 
 module.exports = connection;

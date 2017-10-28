@@ -8,8 +8,14 @@ var burger = {
         })
     },
 
-    create: function(cols, vals, cb) {
-        orm.create("burgers", cols, vals, function(res) {
+    one: function(table, id, db) {
+        orm.one(table, id, (res) => {
+            cb(res);
+        })
+    },
+
+    create: function(burgerName, cb) {
+        orm.create(burgerName, (res) => {
             cb(res);
         });
     },
