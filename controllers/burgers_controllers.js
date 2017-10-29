@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 
-var burger = require('../models/burger.js');
+var burger = require('../models/burger');
 
 //route to show all available in the DB
 
@@ -28,11 +28,9 @@ router.post("/api/burger", (req, res) => {
     burger.create(
 
         [
-            "burgerName", "eat"
-        ], [
             req.body.burgerName, req.body.eat
         ], (result) => {
-            res.json({ id: result, insertId });
+            res.json({ id: result, burger_id });
         });
 });
 

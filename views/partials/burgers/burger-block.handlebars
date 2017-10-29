@@ -1,0 +1,10 @@
+<p class="text-success">
+	{{burger_name}}
+
+	{{!-- <button class="change-sleep btn-lg btn-info" data-id="{{burger_id}}" data-newsleep="{{devoured}}"> --}}
+		<a href="/" id="eatBtn" data-id="{{burger_id}}" data-devour="{{devoured}}" class="btn btn-info btn-xs">Eat me!</a>
+		{{#if devoured}}{{/if}}
+	</button>
+
+	{{!-- <button class="delete-cat btn-lg btn-danger" data-id="{{this.burger_id}}">These burgers have been eaten!</button> --}}
+</p>
